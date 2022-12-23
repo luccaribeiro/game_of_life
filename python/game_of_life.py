@@ -19,11 +19,6 @@ while celulas_vivas:
     coluna = int(input("Coluna: "))
     matriz[linha][coluna] = 1
 
-# matriz[1][2] = 1
-# matriz[2][3] = 1
-# matriz[3][1] = 1
-# matriz[3][2] = 1
-# matriz[3][3] = 1
 # Funções auxiliares
 def contador_de_vizinhos(linha, coluna, matriz):
     vizinhos = []
