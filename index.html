@@ -12,7 +12,7 @@
     <div id="app">
         <div class="tabuleiro">
             <h1 >GAME OF LIFE</h1>
-            <input @click="loo('')" v-if="!tabuleiro" type="button" value="COMEÇAR">
+            <input @click="loo()" v-if="!tabuleiro" type="button" value="COMEÇAR">
             <div v-if="!tabuleiro" class="texto">Clique nas celulas para elas viverem</div>
             <div class="linha-tab linha-tab1">
                 <div @click="change_class('l1c1')" id="l1c1" class="quad naocelula"></div>
