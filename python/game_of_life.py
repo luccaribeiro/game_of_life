@@ -12,18 +12,13 @@ contador = 0
 
 # Adicionando celulas_vivas de acordo com a vontade do usuario
 while celulas_vivas:
-    resp = input("Inserir celulas vivas? [Digite 'N' se não quiser ]: ").upper()
+    resp = input("Inserir celulas vivas? [Digite 'N' se não quiser]: ").upper()
     if resp == 'N':
         break
     linha = int(input("Linha: "))
     coluna = int(input("Coluna: "))
     matriz[linha][coluna] = 1
 
-# matriz[1][2] = 1
-# matriz[2][3] = 1
-# matriz[3][1] = 1
-# matriz[3][2] = 1
-# matriz[3][3] = 1
 # Funções auxiliares
 def contador_de_vizinhos(linha, coluna, matriz):
     vizinhos = []
