@@ -12,7 +12,7 @@ contador = 0
 
 # Adicionando celulas_vivas de acordo com a vontade do usuario
 while celulas_vivas:
-    resp = input("Inserir celulas vivas? [Digite 'N' se não quiser ]: ").upper()
+    resp = input("Inserir celulas vivas? [Digite 'N' se não quiser]: ").upper()
     if resp == 'N':
         break
     linha = int(input("Linha: "))
