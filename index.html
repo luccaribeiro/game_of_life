@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@2"></script>
+    <title>Document</title> 
+</head>
+<body>
+    <div id="app">
+        <div class="tabuleiro">
+            <h1 >GAME OF LIFE</h1>
+            <input @click="loo()" v-if="!tabuleiro" type="button" value="COMEÇAR">
+            <div class="texto">Clique nas celulas para elas viverem</div>
+            <div class="linha-tab linha-tab1">
+              <div @click="change_class('l1c1')" id="l1c1" class="quad naocelula"></div>
+              <div @click="change_class('l2c1')" id="l2c1" class="quad naocelula"></div>
+              <div @click="change_class('l3c1')" id="l3c1" class="quad naocelula"></div>
+              <div @click="change_class('l4c1')" id="l4c1" class="quad naocelula"></div>
+              <div @click="change_class('l5c1')" id="l5c1" class="quad naocelula"></div>
+              <div @click="change_class('l6c1')" id="l6c1" class="quad naocelula"></div>
+              <div @click="change_class('l7c1')" id="l7c1" class="quad naocelula"></div>
+              <div @click="change_class('l8c1')" id="l8c1" class="quad naocelula"></div>
+              <div @click="change_class('l9c1')" id="l9c1" class="quad naocelula"></div>
+              <div @click="change_class('l10c1')" id="l10c1" class="quad naocelula"></div>
+              </div>
+              <div class="linha-tab linha-tab2">
+              <div @click="change_class('l1c2')" id="l1c2" class="quad naocelula"></div>
+              <div @click="change_class('l2c2')" id="l2c2" class="quad naocelula"></div>
+              <div @click="change_class('l3c2')" id="l3c2" class="quad naocelula"></div>
+              <div @click="change_class('l4c2')" id="l4c2" class="quad naocelula"></div>
+              <div @click="change_class('l5c2')" id="l5c2" class="quad naocelula"></div>
+              <div @click="change_class('l6c2')" id="l6c2" class="quad naocelula"></div>
+              <div @click="change_class('l7c2')" id="l7c2" class="quad naocelula"></div>
+              <div @click="change_class('l8c2')" id="l8c2" class="quad naocelula"></div>
+              <div @click="change_class('l9c2')" id="l9c2" class="quad naocelula"></div>
+              <div @click="change_class('l10c2')" id="l10c2" class="quad naocelula"></div>
+              </div>
+              <div class="linha-tab linha-tab3">
+              <div @click="change_class('l1c3')" id="l1c3" class="quad naocelula"></div>
+              <div @click="change_class('l2c3')" id="l2c3" class="quad naocelula"></div>
+              <div @click="change_class('l3c3')" id="l3c3" class="quad naocelula"></div>
+              <div @click="change_class('l4c3')" id="l4c3" class="quad naocelula"></div>
+              <div @click="change_class('l5c3')" id="l5c3" class="quad naocelula"></div>
+              <div @click="change_class('l6c3')" id="l6c3" class="quad naocelula"></div>
+              <div @click="change_class('l7c3')" id="l7c3" class="quad naocelula"></div>
+              <div @click="change_class('l8c3')" id="l8c3" class="quad naocelula"></div>
+              <div @click="change_class('l9c3')" id="l9c3" class="quad naocelula"></div>
+              <div @click="change_class('l10c3')" id="l10c3" class="quad naocelula"></div>
+              </div>
+              <div class="linha-tab linha-tab4">
+              <div @click="change_class('l1c4')" id="l1c4" class="quad naocelula"></div>
+              <div @click="change_class('l2c4')" id="l2c4" class="quad naocelula"></div>
+              <div @click="change_class('l3c4')" id="l3c4" class="quad naocelula"></div>
+              <div @click="change_class('l4c4')" id="l4c4" class="quad naocelula"></div>
+              <div @click="change_class('l5c4')" id="l5c4" class="quad naocelula"></div>
+              <div @click="change_class('l6c4')" id="l6c4" class="quad naocelula"></div>
+              <div @click="change_class('l7c4')" id="l7c4" class="quad naocelula"></div>
+              <div @click="change_class('l8c4')" id="l8c4" class="quad naocelula"></div>
+              <div @click="change_class('l9c4')" id="l9c4" class="quad naocelula"></div>
+              <div @click="change_class('l10c4')" id="l10c4" class="quad naocelula"></div>
+              </div>
+              <div class="linha-tab linha-tab5">
+              <div @click="change_class('l1c5')" id="l1c5" class="quad naocelula"></div>
+              <div @click="change_class('l2c5')" id="l2c5" class="quad naocelula"></div>
+              <div @click="change_class('l3c5')" id="l3c5" class="quad naocelula"></div>
+              <div @click="change_class('l4c5')" id="l4c5" class="quad naocelula"></div>
+              <div @click="change_class('l5c5')" id="l5c5" class="quad naocelula"></div>
+              <div @click="change_class('l6c5')" id="l6c5" class="quad naocelula"></div>
+              <div @click="change_class('l7c5')" id="l7c5" class="quad naocelula"></div>
+              <div @click="change_class('l8c5')" id="l8c5" class="quad naocelula"></div>
+              <div @click="change_class('l9c5')" id="l9c5" class="quad naocelula"></div>
+              <div @click="change_class('l10c5')" id="l10c5" class="quad naocelula"></div>
+              </div>
+              <div class="linha-tab linha-tab6">
+              <div @click="change_class('l1c6')" id="l1c6" class="quad naocelula"></div>
+              <div @click="change_class('l2c6')" id="l2c6" class="quad naocelula"></div>
+              <div @click="change_class('l3c6')" id="l3c6" class="quad naocelula"></div>
+              <div @click="change_class('l4c6')" id="l4c6" class="quad naocelula"></div>
+              <div @click="change_class('l5c6')" id="l5c6" class="quad naocelula"></div>
+              <div @click="change_class('l6c6')" id="l6c6" class="quad naocelula"></div>
+              <div @click="change_class('l7c6')" id="l7c6" class="quad naocelula"></div>
+              <div @click="change_class('l8c6')" id="l8c6" class="quad naocelula"></div>
+              <div @click="change_class('l9c6')" id="l9c6" class="quad naocelula"></div>
+              <div @click="change_class('l10c6')" id="l10c6" class="quad naocelula"></div>
+              </div>
+              <div class="linha-tab linha-tab7">
+              <div @click="change_class('l1c7')" id="l1c7" class="quad naocelula"></div>
+              <div @click="change_class('l2c7')" id="l2c7" class="quad naocelula"></div>
+              <div @click="change_class('l3c7')" id="l3c7" class="quad naocelula"></div>
+              <div @click="change_class('l4c7')" id="l4c7" class="quad naocelula"></div>
+              <div @click="change_class('l5c7')" id="l5c7" class="quad naocelula"></div>
+              <div @click="change_class('l6c7')" id="l6c7" class="quad naocelula"></div>
+              <div @click="change_class('l7c7')" id="l7c7" class="quad naocelula"></div>
+              <div @click="change_class('l8c7')" id="l8c7" class="quad naocelula"></div>
+              <div @click="change_class('l9c7')" id="l9c7" class="quad naocelula"></div>
+              <div @click="change_class('l10c7')" id="l10c7" class="quad naocelula"></div>
+              </div>
+              <div class="linha-tab linha-tab8">
+              <div @click="change_class('l1c8')" id="l1c8" class="quad naocelula"></div>
+              <div @click="change_class('l2c8')" id="l2c8" class="quad naocelula"></div>
+              <div @click="change_class('l3c8')" id="l3c8" class="quad naocelula"></div>
+              <div @click="change_class('l4c8')" id="l4c8" class="quad naocelula"></div>
+              <div @click="change_class('l5c8')" id="l5c8" class="quad naocelula"></div>
+              <div @click="change_class('l6c8')" id="l6c8" class="quad naocelula"></div>
+              <div @click="change_class('l7c8')" id="l7c8" class="quad naocelula"></div>
+              <div @click="change_class('l8c8')" id="l8c8" class="quad naocelula"></div>
+              <div @click="change_class('l9c8')" id="l9c8" class="quad naocelula"></div>
+              <div @click="change_class('l10c8')" id="l10c8" class="quad naocelula"></div>
+              </div>
+              <div class="linha-tab linha-tab9">
+              <div @click="change_class('l1c9')" id="l1c9" class="quad naocelula"></div>
+              <div @click="change_class('l2c9')" id="l2c9" class="quad naocelula"></div>
+              <div @click="change_class('l3c9')" id="l3c9" class="quad naocelula"></div>
+              <div @click="change_class('l4c9')" id="l4c9" class="quad naocelula"></div>
+              <div @click="change_class('l5c9')" id="l5c9" class="quad naocelula"></div>
+              <div @click="change_class('l6c9')" id="l6c9" class="quad naocelula"></div>
+              <div @click="change_class('l7c9')" id="l7c9" class="quad naocelula"></div>
+              <div @click="change_class('l8c9')" id="l8c9" class="quad naocelula"></div>
+              <div @click="change_class('l9c9')" id="l9c9" class="quad naocelula"></div>
+              <div @click="change_class('l10c9')" id="l10c9" class="quad naocelula"></div>
+              </div>
+              <div class="linha-tab linha-tab10">
+              <div @click="change_class('l1c10')" id="l1c10" class="quad naocelula"></div>
+              <div @click="change_class('l2c10')" id="l2c10" class="quad naocelula"></div>
+              <div @click="change_class('l3c10')" id="l3c10" class="quad naocelula"></div>
+              <div @click="change_class('l4c10')" id="l4c10" class="quad naocelula"></div>
+              <div @click="change_class('l5c10')" id="l5c10" class="quad naocelula"></div>
+              <div @click="change_class('l6c10')" id="l6c10" class="quad naocelula"></div>
+              <div @click="change_class('l7c10')" id="l7c10" class="quad naocelula"></div>
+              <div @click="change_class('l8c10')" id="l8c10" class="quad naocelula"></div>
+              <div @click="change_class('l9c10')" id="l9c10" class="quad naocelula"></div>
+              <div @click="change_class('l10c10')" id="l10c10" class="quad naocelula"></div>
+              </div>
+            
+          </div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
