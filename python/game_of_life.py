@@ -90,7 +90,7 @@ while game:
     contador += 1
     print(f"RODADA {contador}")
     print(matriz)
-    sleep(10)
+    sleep(4)
     for linha in range(tamanho):
         for coluna in range(tamanho):
             contador_de_vizinhos(linha, coluna, matriz)
